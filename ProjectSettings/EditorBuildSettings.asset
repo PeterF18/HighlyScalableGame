@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MainMenuScene/MainMenuScene.unity
+    guid: a0ae392c05f0d104dae9e5c52f47fc5a
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/DojoStage/DojoStage.unity
+    guid: bac6a4e57f164f346b481ef2d51195f8
+  - enabled: 1
+    path: Assets/StageSelectionScene/StageSelectionScene.unity
+    guid: 22d7e616807a1da4084bcf050d12da5f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
