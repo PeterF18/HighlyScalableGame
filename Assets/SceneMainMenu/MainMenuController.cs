@@ -7,7 +7,7 @@ namespace MainMenuScene
     {
         public void OnPlayClicked()
         {
-            SceneManager.LoadScene("CharacterSelectionScene");
+            SceneManager.LoadScene("SceneCharacterSelection");
         }
 
     }

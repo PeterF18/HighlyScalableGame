@@ -7,7 +7,7 @@ namespace StageSelectionScene
     {
         public void OnNextClicked()
         {
-            SceneManager.LoadScene("StageScene");
+            SceneManager.LoadScene("SceneStage");
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DojoStage
 {
-    public class DojoStageController : MonoBehaviour
+    public class StageDojoController : MonoBehaviour
     {
         
     }
