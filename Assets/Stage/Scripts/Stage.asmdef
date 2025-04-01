@@ -2,6 +2,7 @@
   "name": "Stage",
   "references": [
     "CommonStage",
-    "Zenject"
+    "Zenject",
+    "Common"
   ]
 }

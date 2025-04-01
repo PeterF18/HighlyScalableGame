@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a368b2340254906aaa4e6a15282829e, type: 3}
-  m_Name: DefaultStageProvider
+  m_Script: {fileID: 11500000, guid: fb96c735b09a48f48c16e14a7e235216, type: 3}
+  m_Name: StageClassic
   m_EditorClassIdentifier: 
-  installerPrefabs:
-  - {fileID: 6156862091496595636, guid: 7ecdd2953933648488edf2d0116245f7, type: 3}
+  stagePrefab: {fileID: 8451495236781115642, guid: a7dc6fbfd737b1c4a877cb1703be8a1a, type: 3}

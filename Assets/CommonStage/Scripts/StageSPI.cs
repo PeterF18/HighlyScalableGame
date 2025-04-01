@@ -1,7 +1,9 @@
-﻿namespace CommonStage.Scripts
+﻿using Zenject;
+
+namespace CommonStage.Scripts
 {
     public interface StageSPI
     {
-        void LoadStage(string stageName);
+        void CreateStage();
     }
 }

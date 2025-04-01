@@ -1,5 +1,5 @@
 ﻿{
-  "name": "CommonStage",
+  "name": "Common",
   "references": [
     "Zenject"
   ]

@@ -1,4 +1,5 @@
-﻿using CommonStage.Scripts;
+﻿using Common.Scripts;
+using CommonStage.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +9,8 @@ namespace GameCore.Scripts
     {
         public override void InstallBindings()
         {
-           
+            Debug.Log("[GameCore] Discovering implementations...");
+            SPILoader.LoadAndBindAll<StageSPI>(Container, "Stages");
         }
     }
 

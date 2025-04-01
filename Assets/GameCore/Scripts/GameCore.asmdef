@@ -2,6 +2,7 @@
   "name": "GameCore",
   "references": [
     "CommonStage",
-    "Zenject"
+    "Zenject",
+    "Common"
   ]
 }
