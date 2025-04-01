@@ -131,8 +131,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptablePacker", "Scripta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ScriptableBuildPipeline", "Unity.ScriptableBuildPipeline.csproj", "{9218c9ac-16bf-194c-08d7-e3be34b0c68a}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCore", "GameCore.csproj", "{2fc2e4a8-7995-2485-84c4-081aa1b49f02}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Collections.Editor", "Unity.Collections.Editor.csproj", "{92306630-a854-01a5-930b-80fb6c0f1564}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{8e5def1d-23e8-a43a-1a4f-db385b313c0a}"
@@ -316,8 +314,6 @@ Global
 		{653df2a0-6bc0-b8c4-f53c-7d49df4900de}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9218c9ac-16bf-194c-08d7-e3be34b0c68a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9218c9ac-16bf-194c-08d7-e3be34b0c68a}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2fc2e4a8-7995-2485-84c4-081aa1b49f02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2fc2e4a8-7995-2485-84c4-081aa1b49f02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92306630-a854-01a5-930b-80fb6c0f1564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{92306630-a854-01a5-930b-80fb6c0f1564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8e5def1d-23e8-a43a-1a4f-db385b313c0a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

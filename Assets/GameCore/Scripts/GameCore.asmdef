@@ -1,7 +1,0 @@
-﻿{
-  "name": "GameCore",
-  "references": [
-    "CommonStage",
-    "Zenject"
-  ]
-}

@@ -1,13 +1,20 @@
-﻿using UnityEngine;
+﻿using CommonScene;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace CharacterSelectionScene
+namespace SceneCharacterSelection
 {
-    public class CharacterSelectionController
+    public class CharacterSelectionController : MonoBehaviour, ISceneSPI
     {
+        public string GetSceneName()
+        {
+            return "SceneCharacterSelection";
+        }
+        
         public void OnNextClicked()
         {
             SceneManager.LoadScene("SceneStageSelection");
         }
+        
     }
 }
