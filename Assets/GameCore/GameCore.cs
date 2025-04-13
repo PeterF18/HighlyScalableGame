@@ -1,18 +1,18 @@
 ﻿using CommonScene;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
 
 namespace GameCore
 {
     public class GameCore : MonoBehaviour
     {
-        [Inject(Id = "SceneMainMenu")]
-        private ISceneSPI _sceneMainMenu;
+        [SerializeField]
+        private BaseSceneSPI sceneMainMenu; 
+
 
         private void Start()
         {
-            string sceneName = _sceneMainMenu.GetSceneName();
+            string sceneName = sceneMainMenu.GetSceneName();
             SceneManager.LoadScene(sceneName);
         }
         

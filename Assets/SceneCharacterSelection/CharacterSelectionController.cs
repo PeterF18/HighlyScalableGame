@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace SceneCharacterSelection
 {
-    public class CharacterSelectionController : MonoBehaviour, ISceneSPI
+    public class CharacterSelectionController : MonoBehaviour
     {
         public string GetSceneName()
         {

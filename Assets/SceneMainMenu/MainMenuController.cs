@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 namespace SceneMainMenu
 {
-    public class MainMenuController : MonoBehaviour, ISceneSPI
+    public class MainMenuController : BaseSceneSPI
     {
-        public string GetSceneName()
+        public override string GetSceneName()
         {
             return "SceneMainMenu";
         }
