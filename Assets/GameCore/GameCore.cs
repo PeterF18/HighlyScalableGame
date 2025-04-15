@@ -9,13 +9,42 @@ namespace GameCore
     {
         [Inject(Id = "SceneMainMenu")]
         private ISceneSPI _sceneMainMenu;
-
-        private void Start()
+        
+        private void Awake()
         {
-            string sceneName = _sceneMainMenu.GetSceneName();
-            SceneManager.LoadScene(sceneName);
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         
+        private void Start()
+        {
+            SceneManager.LoadScene("SceneMainMenu", LoadSceneMode.Single);
+        }
+        
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name == "SceneMainMenu")
+            {
+                SceneContext sceneContext = FindObjectOfType<SceneContext>();
+                if (sceneContext != null)
+                {
+                    sceneContext.Container.Inject(this);
+                    if (_sceneMainMenu != null)
+                        Debug.Log("GameCore reinjected, _sceneMainMenu is now: " + _sceneMainMenu.GetSceneName());
+                    else
+                        Debug.LogError("Reinjection failed: _sceneMainMenu is still null!");
+                }
+                else
+                {
+                    Debug.LogError("SceneContext not found in MainMenu scene.");
+                }
+            }
+        }
+        
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 
 }
