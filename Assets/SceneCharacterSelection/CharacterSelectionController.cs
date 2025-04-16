@@ -1,4 +1,5 @@
 ﻿using CommonScene;
+using Configs;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,9 @@ namespace SceneCharacterSelection
 {
     public class CharacterSelectionController : MonoBehaviour, ISceneSPI
     {
+        [SerializeField]
+        private SceneConfig sceneConfig;
+        
         public string GetSceneName()
         {
             return "SceneCharacterSelection";
@@ -13,7 +17,7 @@ namespace SceneCharacterSelection
         
         public void OnNextClicked()
         {
-            SceneManager.LoadScene("SceneStageSelection");
+            SceneManager.LoadScene(sceneConfig.stageSelection);
         }
         
     }

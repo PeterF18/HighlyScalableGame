@@ -7,5 +7,7 @@ namespace Configs
     {
         public string mainMenu = "SceneMainMenu";
         public string characterSelection = "SceneCharacterSelection";
+        public string stageSelection = "SceneStageSelection";
+        public string stageDojo = "StageDojo";
     }
 }

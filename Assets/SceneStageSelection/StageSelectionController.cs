@@ -1,13 +1,23 @@
-﻿using UnityEngine;
+﻿using CommonScene;
+using Configs;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace StageSelectionScene
 {
-    public class StageSelectionController
+    public class StageSelectionController : MonoBehaviour, ISceneSPI
     {
+        [SerializeField]
+        private SceneConfig sceneConfig;
+        
+        public string GetSceneName()
+        {
+            return "SceneCharacterSelection";
+        }
+        
         public void OnNextClicked()
         {
-            SceneManager.LoadScene("SceneStage");
+            SceneManager.LoadScene(sceneConfig.stageDojo);
         }
     }
 }
