@@ -1,0 +1,9 @@
+﻿{
+  "name": "GameCore",
+  "references": [
+    "CommonScene",
+    "Configs",
+    "Zenject"
+  ],
+  "optionalUnityReferences": []
+}

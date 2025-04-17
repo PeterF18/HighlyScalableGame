@@ -27,7 +27,7 @@ namespace GameCore
         
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            SceneContext sceneContext = FindObjectOfType<SceneContext>();
+            SceneContext sceneContext = FindFirstObjectByType<SceneContext>();
         }
         
         private void OnDestroy()
