@@ -1,29 +1,23 @@
 ﻿using Common.Scripts;
 using CommonStage.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Stage.Scripts
 {
-    [CreateAssetMenu(menuName = "Stage/StageClassic")]
+    [CreateAssetMenu(menuName = "Stage/StageAssembly")]
     public class StageAssembly : SPILoaderBase
     {
-        [SerializeField] private GameObject stagePrefab;
+        [SerializeField] private string sceneName;
         
         public override object CreateAndBind(DiContainer container)
         {
-            var instance = container.InstantiatePrefab(stagePrefab);
-            var spi = instance.GetComponent<StageSPI>();
-
-            if (spi == null)
-            {
-                Debug.LogError("[Stage] Prefab does not implement StageSPI");
-                return null;
-            }
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            var stageImpl = FindObjectsByType<StageClassic>();
+            container.Bind<StageSPI>().FromInstance(stageImpl).AsSingle();
             
-            Debug.Log("[StageAssembly] We got this far");
-            container.Bind<StageSPI>().FromInstance(spi).AsSingle();
-            return spi;
+            return stageImpl;
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Zenject;
-
-namespace CommonStage.Scripts
+﻿namespace CommonStage.Scripts
 {
     public interface StageSPI
     {
