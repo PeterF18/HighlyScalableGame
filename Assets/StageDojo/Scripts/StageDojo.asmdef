@@ -1,6 +1,7 @@
 ﻿{
-  "name": "CommonStage",
+  "name": "StageDojo",
   "references": [
+    "CommonStage",
     "Configs"
   ]
 }

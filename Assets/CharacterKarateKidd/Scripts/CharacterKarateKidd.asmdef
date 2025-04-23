@@ -1,0 +1,7 @@
+﻿{
+  "name": "CharacterKarateKidd",
+  "references": [
+    "CommonCharacter",
+    "Zenject"
+  ]
+}

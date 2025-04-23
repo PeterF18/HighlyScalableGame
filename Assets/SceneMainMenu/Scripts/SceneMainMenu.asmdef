@@ -1,0 +1,7 @@
+﻿{
+  "name": "SceneMainMenu",
+  "references": [
+    "CommonScene",
+    "Configs"
+  ]
+}

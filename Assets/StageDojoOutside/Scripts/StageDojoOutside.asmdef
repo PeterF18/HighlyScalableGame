@@ -1,0 +1,8 @@
+﻿{
+  "name": "StageDojoOutside",
+  "references": [
+    "CommonStage",
+    "Configs",
+    "Zenject"
+  ]
+}

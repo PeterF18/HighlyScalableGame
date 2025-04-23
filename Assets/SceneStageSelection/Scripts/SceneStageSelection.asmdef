@@ -1,0 +1,7 @@
+﻿{
+  "name": "SceneStageSelection",
+  "references": [
+    "CommonScene",
+    "Configs"
+  ]
+}

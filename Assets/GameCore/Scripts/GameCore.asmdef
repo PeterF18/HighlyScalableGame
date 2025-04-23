@@ -1,0 +1,11 @@
+﻿{
+  "name": "GameCore",
+  "references": [
+    "Configs",
+    "CommonScene",
+    "Common",
+    "CommonCharacter",
+    "CommonStage",
+    "Zenject"
+  ]
+}

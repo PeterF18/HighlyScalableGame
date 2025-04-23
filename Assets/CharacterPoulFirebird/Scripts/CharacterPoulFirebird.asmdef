@@ -1,0 +1,7 @@
+﻿{
+  "name": "CharacterPoulFirebird",
+  "references": [
+    "CommonCharacter",
+    "Zenject"
+  ]
+}

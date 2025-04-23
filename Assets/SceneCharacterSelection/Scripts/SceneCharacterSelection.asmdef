@@ -1,0 +1,8 @@
+﻿{
+  "name": "SceneCharacterSelection",
+  "references": [
+    "CommonScene",
+    "Configs",
+    "Zenject"
+  ]
+}
