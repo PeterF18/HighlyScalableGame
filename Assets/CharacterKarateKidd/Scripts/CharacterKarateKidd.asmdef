@@ -2,6 +2,7 @@
   "name": "CharacterKarateKidd",
   "references": [
     "CommonCharacter",
+    "Configs",
     "Zenject"
   ]
 }

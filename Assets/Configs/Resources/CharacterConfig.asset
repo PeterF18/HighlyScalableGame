@@ -15,5 +15,5 @@ MonoBehaviour:
   Options:
   - {fileID: 5724804868264408378, guid: ec14225049975064e851ebf8d7d6e24e, type: 3}
   - {fileID: 7457834965820495492, guid: 252d3c846e4aee144a3fd6fd01a847f2, type: 3}
-  SelectedIndex1: 1
-  SelectedIndex2: 0
+  SelectedIndex1: 0
+  SelectedIndex2: 1

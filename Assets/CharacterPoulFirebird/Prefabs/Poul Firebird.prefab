@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4071439264552044861}
   - component: {fileID: 809621871386050264}
   - component: {fileID: 6027180019536660771}
+  - component: {fileID: -365023294331036642}
+  - component: {fileID: 8505760108879398260}
+  - component: {fileID: 4895514813213802444}
   m_Layer: 0
   m_Name: Poul Firebird
   m_TagString: Untagged
@@ -100,3 +103,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a6c18aa1c644c188f5a49d8a1cce95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-365023294331036642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f995dfe5436426b8dd09be82d09cf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &8505760108879398260
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &4895514813213802444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643c66cfb3b4419da833acf500776241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: ad5d1a7bd08ffdb41944b7a5afc0157c, type: 2}

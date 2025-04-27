@@ -2,6 +2,7 @@
   "name": "CharacterPoulFirebird",
   "references": [
     "CommonCharacter",
+    "Configs",
     "Zenject"
   ]
 }
