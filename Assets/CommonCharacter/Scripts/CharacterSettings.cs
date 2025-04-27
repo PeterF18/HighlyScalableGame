@@ -2,9 +2,16 @@
 
 namespace CommonCharacter.Scripts
 {
-    [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterSettings : MonoBehaviour
     {
-        public CharacterStats stats;
+        [Header("Stats")]
+        [SerializeField] CharacterStats stats;
+        
+        [Header("Attacks")]
+        [SerializeField] AttackData[] attacks;
+        
+        public CharacterStats Stats => stats;
+        public AttackData[] Attacks => attacks;
     }
 }

@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 4071439264552044861}
   - component: {fileID: 809621871386050264}
   - component: {fileID: 6027180019536660771}
-  - component: {fileID: -365023294331036642}
-  - component: {fileID: 8505760108879398260}
-  - component: {fileID: 4895514813213802444}
+  - component: {fileID: 7437560849815469068}
+  - component: {fileID: 4943952522754069221}
+  - component: {fileID: 37689702500728624}
+  - component: {fileID: 855904679775337560}
+  - component: {fileID: 4742949199448630394}
+  - component: {fileID: 3282642385531192684}
   m_Layer: 0
   m_Name: Poul Firebird
   m_TagString: Untagged
@@ -80,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: -1287895391
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -445449516701274400, guid: dd0fd6e4868147245a9a7f7c6bf28104, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd0fd6e4868147245a9a7f7c6bf28104, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.93, y: 10.24}
+  m_Size: {x: 7.68, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,19 +106,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a6c18aa1c644c188f5a49d8a1cce95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-365023294331036642
-MonoBehaviour:
+--- !u!95 &7437560849815469068
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7457834965820495492}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f995dfe5436426b8dd09be82d09cf03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &8505760108879398260
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26b95f6347f820e41ae5b04b2b240109, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &4943952522754069221
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -142,7 +155,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4895514813213802444
+--- !u!114 &37689702500728624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,4 +167,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643c66cfb3b4419da833acf500776241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: ad5d1a7bd08ffdb41944b7a5afc0157c, type: 2}
+  stats: {fileID: 11400000, guid: 4aac2a292a7e1d7499283b940039745b, type: 2}
+  attacks:
+  - {fileID: 11400000, guid: be63a95bcc18c664096ffab079db35d6, type: 2}
+--- !u!114 &855904679775337560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f995dfe5436426b8dd09be82d09cf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4742949199448630394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14c7c0d5f7844cea0ce2ceabf81bdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3282642385531192684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274c441bf7434df3bdb600fac6fe08ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 1

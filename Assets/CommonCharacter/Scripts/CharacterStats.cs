@@ -2,28 +2,14 @@
 
 namespace CommonCharacter.Scripts
 {
-    [CreateAssetMenu(menuName = "Character/Stats")]
+    [CreateAssetMenu(menuName = "CommonCharacter/Stats")]
     public class CharacterStats : ScriptableObject
     {
         [Header("Movement")]
-        public float moveSpeed = 5f;
+        public float moveSpeed = 15f;
         
-        [Header("Knockback (deafults)")]
+        [Header("Knockback Defaults")]
         public float knockbackStrength = 5f;
         public float knockbackDuration = 0.2f;
-
-        [Header("Per-Attack Overrides")] 
-        public AttackKnockback[] attackKnockbacks;
-        
-        //HEALTH AT SOME POINT
-
-    }
-
-    [System.Serializable]
-    public struct AttackKnockback
-    {
-        public string attackName;
-        public float strength;
-        public float duration;
     }
 }

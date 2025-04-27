@@ -70,13 +70,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.59502083, y: 0.104399584}
   spritePixelsToUnits: 200
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 440, y: 107, z: 576, w: 131}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -339,7 +339,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: f594fd734d73bf94f85c434a9efece12
-    internalID: 0
+    internalID: -994788819
     vertices: []
     indices: 
     edges: []

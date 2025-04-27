@@ -9,9 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e84e4a45cc62456bab0c5431ce6712e1, type: 3}
-  m_Name: KarateKiddStats
+  m_Script: {fileID: 11500000, guid: 23bd40d1cbcb40a4ab222368cb0a682c, type: 3}
+  m_Name: KarateKiddLeftPunch
   m_EditorClassIdentifier: 
-  moveSpeed: 15
-  knockbackStrength: 5
-  knockbackDuration: 0.2
+  attackName: QuickJab
+  button: 0
+  requiredFacing: 0
+  isComboRoot: 1
+  comboFollowUps: []
+  startupFrames: 10
+  recoveryOnHit: 1
+  recoveryOnBlock: -4
+  damage: 5
+  animationName: 

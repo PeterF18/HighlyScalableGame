@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace CommonCharacter.Scripts
 {
+    [RequireComponent(typeof(CharacterSettings), typeof(Rigidbody2D))]
     public class CharacterMovementController : MonoBehaviour
     {
         private Rigidbody2D rb;
@@ -12,6 +13,7 @@ namespace CommonCharacter.Scripts
         private bool isKnockedBack;
         private float knockbackTimer;
         private Vector2 knockbackVelocity;
+        private float movementDirection;
 
         void Awake()
         {
@@ -23,7 +25,7 @@ namespace CommonCharacter.Scripts
             rb.freezeRotation = true;
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (isKnockedBack)
             {
@@ -31,21 +33,24 @@ namespace CommonCharacter.Scripts
                 return;
             }
             
-            float h = Input.GetAxis("Horizontal");
-            float speed = characterSettings.stats.moveSpeed;
-            var next = rb.position + Vector2.right * (h * speed * Time.deltaTime);
+            var next = rb.position + Vector2.right * (movementDirection * characterSettings.Stats.moveSpeed * Time.deltaTime);
             rb.MovePosition(next);
+        }
+
+        public void SetMovementDirection(float x)
+        {
+            movementDirection = x;
         }
 
         public void ApplyKnockback(string attackName, Vector2 dir)
         {
-            var ak = characterSettings.stats.attackKnockbacks.FirstOrDefault(x => x.attackName == attackName);
-            float str = !string.IsNullOrEmpty(ak.attackName)
-                ? ak.strength
-                : characterSettings.stats.knockbackStrength;
-            float dur = !string.IsNullOrEmpty(ak.attackName)
-                ? ak.duration
-                : characterSettings.stats.knockbackDuration;
+            var ad = characterSettings.Attacks.FirstOrDefault(x => x.attackName == attackName);
+            float str = !string.IsNullOrEmpty(ad.attackName)
+                ? ad.damage
+                : characterSettings.Stats.knockbackStrength;
+            float dur = !string.IsNullOrEmpty(ad.attackName)
+                ? ad.recoveryOnBlock
+                : characterSettings.Stats.knockbackDuration;
             
             knockbackVelocity = dir.normalized * str;
             knockbackTimer = dur;

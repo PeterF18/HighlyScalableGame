@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 5509466427833360339}
   - component: {fileID: 5757366107640222555}
   - component: {fileID: 8621436270010788795}
-  - component: {fileID: 557081192649761377}
-  - component: {fileID: 7380631421587453038}
-  - component: {fileID: 5051441138089210542}
+  - component: {fileID: -3270430167221743598}
+  - component: {fileID: 3121632247404829313}
+  - component: {fileID: -204008711031089219}
+  - component: {fileID: 6396825500759046522}
+  - component: {fileID: 6579951758840351395}
+  - component: {fileID: 5799398816624952803}
   m_Layer: 0
   m_Name: Karate Kidd
   m_TagString: Untagged
@@ -80,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: -1287895391
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6806911725108990687, guid: 98de2c4b779ba8740b92970355524f4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98de2c4b779ba8740b92970355524f4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.46, y: 10.24}
+  m_Size: {x: 7.68, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,7 +106,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c8d833ae7d458ca83cb96236d00670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &557081192649761377
+--- !u!95 &-3270430167221743598
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a65e521ed02957347a12cd8ec1d79907, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &3121632247404829313
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -111,7 +136,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5724804868264408378}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -130,7 +155,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7380631421587453038
+--- !u!114 &-204008711031089219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 8dea1b323c6a7234f998df737999dfce, type: 2}
---- !u!114 &5051441138089210542
+  attacks:
+  - {fileID: 11400000, guid: b5de397ac46822c49a2648a4cd25248d, type: 2}
+--- !u!114 &6396825500759046522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,3 +182,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f995dfe5436426b8dd09be82d09cf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6579951758840351395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14c7c0d5f7844cea0ce2ceabf81bdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5799398816624952803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274c441bf7434df3bdb600fac6fe08ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 0
