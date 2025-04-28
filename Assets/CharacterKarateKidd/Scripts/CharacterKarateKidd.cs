@@ -6,9 +6,6 @@ namespace CharacterKarateKidd.Scripts
 {
     public class CharacterKarateKidd : MonoBehaviour, ICharacterSPI
     {
-        public void Initialize(CharacterConfig config, Transform spawnPoint)
-        {
-            transform.position = spawnPoint.position;
-        }
+        
     }
 }

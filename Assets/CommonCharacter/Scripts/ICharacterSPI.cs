@@ -5,6 +5,6 @@ namespace CommonCharacter.Scripts
 {
     public interface ICharacterSPI
     {
-        void Initialize(CharacterConfig config, Transform spawnPoint);
+        
     }
 }
