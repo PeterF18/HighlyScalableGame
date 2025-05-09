@@ -1,0 +1,7 @@
+﻿{
+  "name": "Collision",
+  "references": [
+    "CommonCollision",
+    "Zenject"
+  ]
+}

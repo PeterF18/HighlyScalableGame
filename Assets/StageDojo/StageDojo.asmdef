@@ -2,6 +2,7 @@
   "name": "StageDojo",
   "references": [
     "CommonStage",
-    "Configs"
+    "Configs",
+    "Zenject"
   ]
 }

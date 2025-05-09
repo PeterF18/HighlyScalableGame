@@ -14,6 +14,7 @@ namespace Configs.Scripts
         [Tooltip("Index into Options for Player 2 (or CPU)")] 
         public int SelectedIndex2 = 0;
         
+        //This needs to be moved out at some point into some character selection of some sort
         public GameObject SelectedPlayer1 =>
             Options != null && SelectedIndex1 >= 0 && SelectedIndex1 < Options.Length 
                 ? Options[SelectedIndex1] 

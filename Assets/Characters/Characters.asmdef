@@ -1,0 +1,9 @@
+﻿{
+  "name": "Characters",
+  "references": [
+    "CommonCharacter",
+    "CommonCollision",
+    "Configs",
+    "Zenject"
+  ]
+}
