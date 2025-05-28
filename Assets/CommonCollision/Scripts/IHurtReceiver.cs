@@ -4,8 +4,8 @@ namespace CommonCollision.Scripts
 {
     public interface IHurtReceiver
     {
-        bool IsBlocking(Vector2 hitDirection);
+        bool CanBeHit();
         
-        void ReceiveHit(int damage, Vector2 hitDirection);
+        void TakeDamage(int damage, Vector2 hitDirection);
     }
 }

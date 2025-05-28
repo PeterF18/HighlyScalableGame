@@ -13,10 +13,11 @@ namespace Characters.Scripts
     {
         [Inject] private IHitboxFactory _hitboxFactory;
         [Inject] private ICharacterBlock _blockController;
+        [Inject] private ICharacterState _characterState;
         
         Animator animator;
         private bool inAttack;
-        private AttackData lastAttack;
+        private IAttackData lastAttack;
 
         [SerializeField] private SpawnPair[] _spawnPairs;
 
@@ -25,15 +26,15 @@ namespace Characters.Scripts
             animator = GetComponent<Animator>();
         }
 
-        public bool DoAttack(AttackData data)
+        public bool DoAttack(IAttackData data)
         {
-            if (inAttack) return false;
+            if (!_characterState.CanAct || inAttack) return false;
             
             // Am I root/neutral attack and no lastAttack yet?
-            bool okRoot = data.isComboRoot && lastAttack == null;
+            bool okRoot = data.IsComboRoot && lastAttack == null;
             
             // or am I a legal follow-up?
-            bool okFollow = lastAttack != null && lastAttack.comboFollowUps.Contains(data);
+            bool okFollow = lastAttack != null && lastAttack.ComboFollowUps.Contains(data);
 
             if (!(okRoot || okFollow)) return false;
             
@@ -42,11 +43,11 @@ namespace Characters.Scripts
             return true;
         }
 
-        Transform GetSpawn(AttackData data)
+        Transform GetSpawn(IAttackData data)
         {
             foreach (var p in _spawnPairs)
             {
-                if (p.attack == data)
+                if (ReferenceEquals(p.attack, data))
                 {
                     return p.spawnPoint;
                 }
@@ -55,25 +56,23 @@ namespace Characters.Scripts
             return transform;
         }
 
-        IEnumerator PerformAttack(AttackData data)
+        IEnumerator PerformAttack(IAttackData data)
         {
             inAttack = true;
 
             // Startup frames
-            yield return new WaitForSeconds(data.startupFrames / 60f);
+            yield return new WaitForSeconds(data.StartupFrames / 60f);
             
             // Trigger animation
-            animator.SetTrigger(data.attackName);
+            animator.SetTrigger(data.AttackName);
             
             // Spawn hitbox
-            bool didHit = false;
-            bool didBlock = false;
-
             var info = new HitboxInfo()
             {
-                Damage = data.damage,
-                Offset = data.hitboxOffset,
-                Size = data.hitboxSize
+                Damage = data.Damage,
+                Offset = data.HitboxOffset,
+                Size = data.HitboxSize,
+                LifeTimeFrames = data.StartupFrames
             };
             
             var spawn = GetSpawn(data).position;
@@ -82,17 +81,32 @@ namespace Characters.Scripts
                 info,
                 spawn,
                 transform);
-            
-            hb.OnHit += () => didHit = true;
-            hb.OnBlock += () => didBlock = true;
-            
-            // Recovery
-            float recFrames;
-            if (didHit) recFrames = data.recoveryOnHit;
-            else if (didBlock) recFrames = data.recoveryOnBlock;
-            else recFrames = 60;
-            yield return new WaitForSeconds(recFrames / 60f);
 
+            //This is to ensure that attacks can't hit the attacker themselves
+            if (hb is MonoBehaviour mb)
+            {
+                var hbCollider = mb.GetComponent<Collider2D>();
+                //So, here I ignore collition with the attack's owner
+                foreach (var col in transform.root.GetComponentsInChildren<Collider2D>())
+                {
+                    Physics2D.IgnoreCollision(col, hbCollider);
+                }
+            }
+            
+            hb.OnTriggered += (other, hitInfo) =>
+            {
+                var dir = (other.transform.position - transform.position).normalized;
+
+                if (other.TryGetComponent<ICharacterBlock>(out var block))
+                {
+                    block.ReceiveHit(data, dir);
+                }
+                else if (other.TryGetComponent<IHurtReceiver>(out var hr))
+                {
+                    if (hr.CanBeHit()) hr.TakeDamage(hitInfo.Damage, dir);
+                }
+            };
+            
             // End
             inAttack = false;
             lastAttack = null;
@@ -102,7 +116,7 @@ namespace Characters.Scripts
     [System.Serializable]
     public class SpawnPair
     {
-        public AttackData attack;
+        public IAttackData attack;
         public Transform spawnPoint;
     }
 }

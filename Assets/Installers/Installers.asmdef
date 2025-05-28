@@ -4,6 +4,10 @@
     "CommonScene",
     "CommonStage",
     "SceneMainMenu",
+    "CommonCharacter",
+    "Characters",
+    "CommonCollision",
+    "Collision",
     "Zenject"
   ]
 }

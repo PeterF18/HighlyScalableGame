@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
-using CommonCharacter.Scripts;
+﻿using System.Linq;
+using Characters.Data;
+using CommonCharacter.Data;
 using UnityEngine;
 
 namespace Characters.Scripts
@@ -17,26 +17,40 @@ namespace Characters.Scripts
         CharacterSettings characterSettings;
         CharacterMovementController characterMovementController;
         
+        private string hAxis, vAxis, leftPunch, rightPunch, leftKick, rightKick;
+        
+        public float HorizontalInput { get; private set; }
+        public FacingDirection CurrentFacing { get; private set; }
+        
+        //+1 for face towards right, -1 for face towards left
+        public float FacingSign => transform.localScale.x > 0 ? 1f : -1f;
+        
+        //Horizontal input mapping where positive is forward and negative is backwards
+        public float RelativeHorizontal => HorizontalInput * FacingSign;
+        
         void Awake()
         {
             characterController = GetComponent<CharacterCombatController>();
             characterSettings = GetComponent<CharacterSettings>();
             characterMovementController = GetComponent<CharacterMovementController>();
+            
+            hAxis      = player == Player.P1 ? "P1_Horizontal" : "P2_Horizontal";
+            vAxis      = player == Player.P1 ? "P1_Vertical"   : "P2_Vertical";
+            leftPunch  = player == Player.P1 ? "P1_LP"         : "P2_LP";
+            rightPunch = player == Player.P1 ? "P1_RP"         : "P2_RP";
+            leftKick   = player == Player.P1 ? "P1_LK"         : "P2_LK";
+            rightKick  = player == Player.P1 ? "P1_RK"         : "P2_RK";
         }
 
         private void Update()
-        {
-            string hAxis      = player == Player.P1 ? "P1_Horizontal" : "P2_Horizontal";
-            string vAxis      = player == Player.P1 ? "P1_Vertical"   : "P2_Vertical";
-            string leftPunch  = player == Player.P1 ? "P1_LP"         : "P2_LP";
-            string rightPunch = player == Player.P1 ? "P1_RP"         : "P2_RP";
-            string leftKick   = player == Player.P1 ? "P1_LK"         : "P2_LK";
-            string rightKick  = player == Player.P1 ? "P1_RK"         : "P2_RK";
-            
+        { 
             //Stick direction
             var h = Input.GetAxisRaw(hAxis);
             var v = Input.GetAxisRaw(vAxis);
             var facing = DetectFacing(h, v);
+
+            HorizontalInput = h;
+            CurrentFacing = facing;
 
             characterMovementController.SetMovementDirection(h);
 
@@ -44,6 +58,28 @@ namespace Characters.Scripts
             TryButton(Input.GetButtonDown(rightPunch), InputButton.RightPunch, facing);
             TryButton(Input.GetButtonDown(leftKick), InputButton.LeftKick, facing);
             TryButton(Input.GetButtonDown(rightKick), InputButton.RightKick, facing);
+        }
+
+        public FacingDirection RelativeFacing
+        {
+            get
+            {
+                var f = CurrentFacing;
+                if (FacingSign < 0)
+                {
+                    return f switch
+                    {
+                        FacingDirection.Forward => FacingDirection.Back,
+                        FacingDirection.Back => FacingDirection.Forward,
+                        FacingDirection.UpForward => FacingDirection.UpBack,
+                        FacingDirection.UpBack => FacingDirection.UpForward,
+                        FacingDirection.DownForward => FacingDirection.DownBack,
+                        FacingDirection.DownBack => FacingDirection.DownForward,
+                        _ => f
+                    };
+                }
+                return f;
+            } 
         }
 
         FacingDirection DetectFacing(float h, float v)
@@ -67,7 +103,7 @@ namespace Characters.Scripts
             if (!pressed) return;
             
             //Find all moves matching button+facing
-            var candidates = characterSettings.Attacks.Where(a => a.button == button && a.requiredFacing == facing);
+            var candidates = characterSettings.Attacks.Where(a => a.Button == button && a.RequiredFacing == facing);
             
             foreach (var a in candidates)
             {

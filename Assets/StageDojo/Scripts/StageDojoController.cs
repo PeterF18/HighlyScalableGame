@@ -14,26 +14,23 @@ namespace DojoStage.Scripts
         
         public void InitializeStage(CharacterConfig config)
         {
-            Debug.Log($"[StageDojo] InitializeStage called – options.Count = {config.Options.Length}");
-            if (config.Options.Length == 0)
-            {
-                Debug.LogError("[StageDojo] You forgot to fill the CharacterConfig.options list in the inspector!");
-                return;
-            }
-
-            Debug.Log($"[StageDojo] Spawning P1 at {player1SpawnPoint.position}, P2 at {player2SpawnPoint.position}");
-
-            _container.InstantiatePrefab(
+            var p1GO = _container.InstantiatePrefab(
                 config.SelectedPlayer1,
                 player1SpawnPoint.position,
-                player1SpawnPoint.rotation,
+                Quaternion.identity,
                 null);
-
-            _container.InstantiatePrefab(
+            
+            var p2GO = _container.InstantiatePrefab(
                 config.SelectedPlayer2,
                 player2SpawnPoint.position,
-                player2SpawnPoint.rotation,
+                Quaternion.identity,
                 null);
+            
+            //Flipping p2
+            var p2Transform = p2GO.transform;
+            var localScale = p2Transform.localScale;
+            localScale.x *= -1f;
+            p2Transform.localScale = localScale;
         }
     }
 }

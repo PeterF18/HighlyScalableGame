@@ -1,5 +1,6 @@
 ﻿using System;
 using CommonCollision.Data;
+using UnityEngine;
 
 namespace CommonCollision.Scripts
 {
@@ -7,9 +8,7 @@ namespace CommonCollision.Scripts
     public interface IHitbox
     {
         //For the first time this hitbox touches something it can collide with
-        event Action OnHit;
-        
-        event Action OnBlock;
+        event Action<Collider2D, HitboxInfo> OnTriggered;
 
         //To remove the hitbox again after its active window
         void Destroy();

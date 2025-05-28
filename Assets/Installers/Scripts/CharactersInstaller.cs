@@ -22,6 +22,11 @@ namespace Characters.Scripts
                 .To<CharacterBlockController>()
                 .FromComponentInHierarchy()
                 .AsSingle();
+            
+            Container.Bind<ICharacterState>()
+                .To<CharacterStateController>()
+                .FromComponentInHierarchy()
+                .AsSingle();
         }
         
     }

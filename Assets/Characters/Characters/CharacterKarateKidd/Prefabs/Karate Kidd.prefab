@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5509466427833360339}
   - component: {fileID: 5757366107640222555}
-  - component: {fileID: 8621436270010788795}
   - component: {fileID: -3270430167221743598}
   - component: {fileID: 3121632247404829313}
   - component: {fileID: -204008711031089219}
@@ -81,6 +80,8 @@ GameObject:
   - component: {fileID: 5799398816624952803}
   - component: {fileID: 5034591544070503412}
   - component: {fileID: 2047336558516285325}
+  - component: {fileID: -667462343894613664}
+  - component: {fileID: 1873753964599562373}
   m_Layer: 0
   m_Name: Karate Kidd
   m_TagString: Untagged
@@ -160,18 +161,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8621436270010788795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5724804868264408378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c8d833ae7d458ca83cb96236d00670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &-3270430167221743598
 Animator:
   serializedVersion: 7
@@ -261,8 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPairs:
-  - attack: {fileID: 11400000, guid: b5de397ac46822c49a2648a4cd25248d, type: 2}
-    spawnPoint: {fileID: 2588161368377485215}
+  - spawnPoint: {fileID: 2588161368377485215}
 --- !u!114 &5799398816624952803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,5 +311,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3c97286b6814bf087f12a8145f099ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-667462343894613664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8166ccc07ff3409dad73ae349de5dbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1873753964599562373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87933e04ec14b1bbfc13b598d55fda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

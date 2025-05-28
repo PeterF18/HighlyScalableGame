@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace CommonCharacter.Scripts
+namespace Characters.Data
 {
-    [CreateAssetMenu(menuName = "CommonCharacter/Stats")]
+    [CreateAssetMenu(menuName = "Character/Stats")]
     public class CharacterStats : ScriptableObject
     {
         [Header("Movement")]

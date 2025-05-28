@@ -1,11 +1,15 @@
-﻿using CommonCharacter.Scripts;
+﻿using CommonCharacter.Data;
+using CommonCharacter.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace Characters.Scripts
 {
     [RequireComponent(typeof(Animator))]
     public class CharacterBlockController : MonoBehaviour, ICharacterBlock
     {
+        [Inject] private ICharacterState _characterState;
+        
         private Animator anim;
         private PlayerInputController input;
 
@@ -15,19 +19,31 @@ namespace Characters.Scripts
             input = GetComponent<PlayerInputController>();
         }
         
-        public bool isBlocking()
+        public bool IsBlocking()
         {
-            throw new System.NotImplementedException();
+            switch (input.RelativeFacing)
+            {
+                case FacingDirection.Back:
+                case FacingDirection.DownBack:
+                case FacingDirection.Neutral:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
-        public void receiveBlock(AttackData data, Vector2 direction)
+        public void ReceiveHit(IAttackData data, Vector2 direction)
         {
-            anim.SetTrigger("Block");
-        }
-
-        public void receiveHit(AttackData data, Vector2 direction)
-        {
-            anim.SetTrigger("Hurt");
+            if (IsBlocking())
+            {
+                anim.SetTrigger("Block");
+                _characterState.SetRecovery(data.RecoveryOnBlock);
+            }
+            else
+            {
+                anim.SetTrigger("Hit");
+                _characterState.SetRecovery(data.RecoveryOnHit);
+            }
         }
     }
 }

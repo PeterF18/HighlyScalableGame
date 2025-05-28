@@ -8,8 +8,8 @@ namespace Collision.Scripts
     [RequireComponent(typeof(BoxCollider2D))]
     public class Hitbox : MonoBehaviour, IHitbox
     {
-        public event Action OnHit = delegate { };
-        public event Action OnBlock = delegate { };
+        public event Action<Collider2D, HitboxInfo> OnTriggered = delegate { };
+        
 
         internal HitboxInfo Info;
         internal Transform Attacker;
@@ -30,31 +30,24 @@ namespace Collision.Scripts
             Collider.size = info.Size;
             Collider.offset = info.Offset;
             Collider.enabled = true;
+
+            if (info.LifeTimeFrames > 0)
+            {
+                float lifeTimeSeconds = info.LifeTimeFrames / 60f;
+                UnityEngine.GameObject.Destroy(gameObject, lifeTimeSeconds);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var hr = other.GetComponent<IHurtReceiver>();
-            if (hr == null) return;
-            
-            var dir = (other.transform.position - Attacker.position).normalized;
-
-            if (hr.IsBlocking(dir))
-            {
-                OnBlock();
-            }
-            else
-            {
-                OnHit();
-                hr.ReceiveHit(Info.Damage, dir);
-            }
-            
-            Destroy();
+            OnTriggered(other, Info);
+            UnityEngine.Object.Destroy(gameObject);
         }
         
         public void Destroy()
         {
-            Destroy(gameObject);
+            
         }
+        
     }
 }

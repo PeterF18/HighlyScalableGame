@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
+using Characters.Data;
 using CommonCharacter.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace Characters.Scripts
 {
     [RequireComponent(typeof(CharacterSettings), typeof(Rigidbody2D))]
     public class CharacterMovementController : MonoBehaviour, ICharacterMovement
     {
+        [Inject] private ICharacterState _characterState;
+        
         private Rigidbody2D rb;
         private CharacterSettings characterSettings;
         private bool isKnockedBack;
@@ -34,6 +37,11 @@ namespace Characters.Scripts
                 return;
             }
             
+            if (!_characterState.CanAct)
+            {
+                return;
+            }
+            
             var next = rb.position + Vector2.right * (movementDirection * characterSettings.Stats.moveSpeed * Time.deltaTime);
             rb.MovePosition(next);
         }
@@ -45,12 +53,12 @@ namespace Characters.Scripts
 
         public void ApplyKnockback(string attackName, Vector2 dir)
         {
-            var ad = characterSettings.Attacks.FirstOrDefault(x => x.attackName == attackName);
-            float str = !string.IsNullOrEmpty(ad.attackName)
-                ? ad.damage
+            var ad = characterSettings.Attacks.FirstOrDefault(x => x.AttackName == attackName);
+            float str = !string.IsNullOrEmpty(ad.AttackName)
+                ? ad.Damage
                 : characterSettings.Stats.knockbackStrength;
-            float dur = !string.IsNullOrEmpty(ad.attackName)
-                ? ad.recoveryOnBlock
+            float dur = !string.IsNullOrEmpty(ad.AttackName)
+                ? ad.RecoveryOnBlock
                 : characterSettings.Stats.knockbackDuration;
             
             knockbackVelocity = dir.normalized * str;

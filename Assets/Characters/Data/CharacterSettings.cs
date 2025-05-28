@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CommonCharacter.Scripts
+namespace Characters.Data
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterSettings : MonoBehaviour

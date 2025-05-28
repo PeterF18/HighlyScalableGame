@@ -2,6 +2,6 @@
 {
     public interface ICharacterCombat
     {
-        bool DoAttack(AttackData data);
+        bool DoAttack(IAttackData data);
     }
 }
