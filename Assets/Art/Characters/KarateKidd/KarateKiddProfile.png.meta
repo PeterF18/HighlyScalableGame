@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KarateKiddProfile_0: 3909858138190432944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

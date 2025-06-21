@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VolcanoBackground_0: -6910921182285184982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

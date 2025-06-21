@@ -1,6 +1,8 @@
-﻿using CommonStage.Scripts;
+﻿using CommonCharacter.Scripts;
+using CommonStage.Scripts;
 using Configs.Scripts;
 using UnityEngine;
+
 using Zenject;
 
 namespace DojoStage.Scripts
@@ -31,6 +33,11 @@ namespace DojoStage.Scripts
             var localScale = p2Transform.localScale;
             localScale.x *= -1f;
             p2Transform.localScale = localScale;
+            
+            //Assign IDs for DEMO
+            p1GO.GetComponent<ICharacterInitializer>()?.InitializeCharacter(1);
+            p2GO.GetComponent<ICharacterInitializer>()?.InitializeCharacter(2);
+            
         }
     }
 }

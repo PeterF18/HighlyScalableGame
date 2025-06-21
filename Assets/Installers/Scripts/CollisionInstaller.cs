@@ -1,8 +1,9 @@
-﻿using CommonCollision.Scripts;
+﻿using Collision.Scripts;
+using CommonCollision.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace Collision.Scripts
+namespace Installers.Scripts
 {
     public class CollisionInstaller : MonoInstaller
     {

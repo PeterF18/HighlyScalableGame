@@ -78,10 +78,11 @@ GameObject:
   - component: {fileID: 6396825500759046522}
   - component: {fileID: 6579951758840351395}
   - component: {fileID: 5799398816624952803}
-  - component: {fileID: 5034591544070503412}
   - component: {fileID: 2047336558516285325}
   - component: {fileID: -667462343894613664}
   - component: {fileID: 1873753964599562373}
+  - component: {fileID: 5034591544070503412}
+  - component: {fileID: 206813044791834404}
   m_Layer: 0
   m_Name: Karate Kidd
   m_TagString: Untagged
@@ -264,6 +265,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
+--- !u!114 &2047336558516285325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c97286b6814bf087f12a8145f099ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-667462343894613664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8166ccc07ff3409dad73ae349de5dbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1873753964599562373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724804868264408378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87933e04ec14b1bbfc13b598d55fda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &5034591544070503412
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -301,7 +338,7 @@ CapsuleCollider2D:
   m_Offset: {x: -1.1606057, y: 1.7946639}
   m_Size: {x: 3.0432687, y: 4.858979}
   m_Direction: 0
---- !u!114 &2047336558516285325
+--- !u!114 &206813044791834404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,30 +347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5724804868264408378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c97286b6814bf087f12a8145f099ff, type: 3}
+  m_Script: {fileID: 11500000, guid: b169a8c82b7f4ffea14886361bfb2b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-667462343894613664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5724804868264408378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8166ccc07ff3409dad73ae349de5dbe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1873753964599562373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5724804868264408378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f87933e04ec14b1bbfc13b598d55fda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  characterStats: {fileID: 0}

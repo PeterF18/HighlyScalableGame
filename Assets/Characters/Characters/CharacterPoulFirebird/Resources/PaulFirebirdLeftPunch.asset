@@ -20,5 +20,6 @@ MonoBehaviour:
   startupFrames: 12
   recoveryOnHit: 2
   recoveryOnBlock: -4
-  damage: 15
-  animationName: 
+  damage: 10
+  hitboxSize: {x: 1, y: 1}
+  hitboxOffset: {x: 0, y: 0}

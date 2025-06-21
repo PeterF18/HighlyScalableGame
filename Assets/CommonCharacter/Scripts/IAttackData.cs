@@ -17,6 +17,5 @@ namespace CommonCharacter.Scripts
         int                      Damage          { get; }
         Vector2                  HitboxSize      { get; }
         Vector2                  HitboxOffset    { get; }
-
     }
 }

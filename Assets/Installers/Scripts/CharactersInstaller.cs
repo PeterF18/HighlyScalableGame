@@ -1,8 +1,10 @@
-﻿using CommonCharacter.Scripts;
+﻿using Characters.Data;
+using Characters.Scripts;
+using CommonCharacter.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace Characters.Scripts
+namespace Installers.Scripts
 {
     public class CharactersInstaller : MonoInstaller
     {
@@ -27,6 +29,12 @@ namespace Characters.Scripts
                 .To<CharacterStateController>()
                 .FromComponentInHierarchy()
                 .AsSingle();
+            
+            Container.Bind<ICharacterInitializer>()
+                .To<CharacterSettings>()
+                .FromComponentInHierarchy()
+                .AsSingle();
+            
         }
         
     }

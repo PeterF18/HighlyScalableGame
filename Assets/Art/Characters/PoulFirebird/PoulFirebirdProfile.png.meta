@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PoulFirebirdProfile_0: 3844504206796631189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
