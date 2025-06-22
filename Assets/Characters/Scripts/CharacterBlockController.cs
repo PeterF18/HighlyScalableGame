@@ -23,7 +23,7 @@ namespace Characters.Scripts
             input = GetComponent<PlayerInputController>();
             characterSettings = GetComponent<CharacterSettings>();
             characterStats = characterSettings.Stats;
-            characterRuntimeStats = new CharacterRuntimeStats(characterStats.hp);
+            characterRuntimeStats = GetComponent<CharacterRuntimeStats>();
         }
         
         public bool IsBlocking()

@@ -7,6 +7,8 @@
     "CommonCharacter",
     "Characters",
     "CommonCollision",
+    "CommonUI",
+    "UI",
     "Collision",
     "Zenject"
   ]

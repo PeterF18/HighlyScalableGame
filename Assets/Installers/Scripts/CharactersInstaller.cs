@@ -35,6 +35,10 @@ namespace Installers.Scripts
                 .FromComponentInHierarchy()
                 .AsSingle();
             
+            Container.Bind<ICharacterHealth>()
+                .To<CharacterRuntimeStats>()
+                .FromComponentInHierarchy()
+                .AsSingle();
         }
         
     }

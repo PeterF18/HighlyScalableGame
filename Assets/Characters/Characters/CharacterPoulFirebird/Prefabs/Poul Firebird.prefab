@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 2867236232286284622}
   - component: {fileID: 8113622448522481497}
   - component: {fileID: -5296298502480523975}
+  - component: {fileID: 2014700905012550056}
   m_Layer: 0
   m_Name: Poul Firebird
   m_TagString: Untagged
@@ -305,3 +306,15 @@ CapsuleCollider2D:
   m_Offset: {x: -1.1118401, y: 1.9532909}
   m_Size: {x: 2.876075, y: 5.2563972}
   m_Direction: 0
+--- !u!114 &2014700905012550056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457834965820495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b69d6043774426b98aac6f51dccc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

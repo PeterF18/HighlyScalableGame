@@ -1,0 +1,7 @@
+﻿{
+  "name": "CommonUI",
+  "references": [
+    "CommonCharacter",
+    "Zenject"
+  ]
+}

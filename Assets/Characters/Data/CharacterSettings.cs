@@ -1,4 +1,5 @@
-﻿using CommonCharacter.Scripts;
+﻿using Characters.Scripts;
+using CommonCharacter.Scripts;
 using UnityEngine;
 
 namespace Characters.Data

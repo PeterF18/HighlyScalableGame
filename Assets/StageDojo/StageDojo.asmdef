@@ -3,6 +3,7 @@
   "references": [
     "CommonStage",
     "CommonCharacter",
+    "CommonUI",
     "Configs",
     "Zenject"
   ]

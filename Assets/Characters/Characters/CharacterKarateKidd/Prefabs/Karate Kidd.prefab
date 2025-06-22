@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: -667462343894613664}
   - component: {fileID: 1873753964599562373}
   - component: {fileID: 5034591544070503412}
-  - component: {fileID: 206813044791834404}
+  - component: {fileID: 8737251200086005151}
   m_Layer: 0
   m_Name: Karate Kidd
   m_TagString: Untagged
@@ -338,7 +338,7 @@ CapsuleCollider2D:
   m_Offset: {x: -1.1606057, y: 1.7946639}
   m_Size: {x: 3.0432687, y: 4.858979}
   m_Direction: 0
---- !u!114 &206813044791834404
+--- !u!114 &8737251200086005151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,7 +347,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5724804868264408378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b169a8c82b7f4ffea14886361bfb2b42, type: 3}
+  m_Script: {fileID: 11500000, guid: 21b69d6043774426b98aac6f51dccc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterStats: {fileID: 0}
